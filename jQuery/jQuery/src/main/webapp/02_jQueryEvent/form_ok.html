@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="event.css">
+</head>
+
+<body>
+    <h1>회원가입</h1>
+    <form name="form1">
+        <div id="input">
+            <h2>저장</h2>
+            <input type="button" id="backBtn" value="이전 페이지로 이동" class="myButton">
+        </div>
+    </form>
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+        $(function () {
+            $('.myButton').click(function () {
+                //history.back() → 데이터 그대로
+                location.href = 'exam10.html'; // 데이터 사라짐
+            });
+        });
+
+    </script>
+</body>
+
+</html>

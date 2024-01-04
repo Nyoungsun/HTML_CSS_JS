@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+.item span {
+	visibility: hidden;
+}
+
+.item:hover span{
+	visibility: visible;
+}
+</style>
+</head>
+<body>
+	<h3>다음 빈 곳에 숨은 단어?</h3>
+	<hr>
+	<ul>
+		<li>I (<span class="item"><span>love</span></span>) you.
+		</li>
+		<li>CSS is Cascading (<span class="item"><span>Style</span></span>) Sheet.
+		</li>
+		<li>응답하라 (<span class="item"><span>1998</span></span>).
+		</li>
+	</ul>
+</body>
+</html>
+
+<!-- 
+visibility: hidden;인 태그에는 이벤트 동작 불가 (hover 등)
+중첩 태그로 해결
+ -->

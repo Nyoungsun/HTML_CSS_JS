@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="event.css">
+</head>
+
+<body>
+    <h1>focus/blur 확인하기</h1>
+    <div id="input">
+        <input type="text">
+    </div>
+    <h2>결과</h2>
+    <div id="result"></div>
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+        $(function () {
+            //페이지가 열리면 자동으로 포커스 설정
+            $('#input > input[type="text"]').focus();
+            $('#input > input[type="text"]').focus(function(){
+                $('#result').html('포커스 엔터');
+            });
+            $('#input > input[type="text"]').blur(function(){ //focusout 가능
+                $('#result').html('포커스 아웃');
+            });
+
+        });
+    </script>
+</body>

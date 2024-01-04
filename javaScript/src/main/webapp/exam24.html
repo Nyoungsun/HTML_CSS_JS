@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body onload="number()">
+    <p> 고객님의 인증번호는 <strong id="auth">00000</strong>입니다.</p>
+    <input type="button" value="인증번호 새로 받기" onclick="refresh()" />
+    <input type="button" value="네이버로 이동하기" onclick="goNaver()" />
+
+    <script>
+        function random(x, y) {
+            return Math.floor(Math.random() * (y - x + 1) + x); // 항상 1보다 작음
+        }
+
+        function number() {
+            var value = "";
+
+            for (var i = 1; i <= 5; i++) {
+                value += random(0, 9);
+            }
+            document.getElementById("auth").innerText = value;
+        }
+
+        function refresh() {
+            location.reload(); //새로고침처럼 
+        }
+
+        function goNaver() {
+            if (confirm("정말로 네이버로 이동하시겠습니까?")) {
+                location.href = "https://www.naver.com";
+            }
+        }
+    </script>
+</body>
+
+</html>

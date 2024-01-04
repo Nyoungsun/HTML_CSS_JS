@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<script>
+    function insertQuestion(num) { //2번
+        alert(num);
+
+        var str = prompt("사칙연산의 수식을 입력 (예: 100 + 50)", "");
+        var answer = eval(str);
+        var result = "<font color = 'red'>" + str + "=" + answer + "</font>";
+
+        document.getElementById("question").innerHTML = result; //3번 → question id 모름
+    }
+</script>
+
+<body onload="insertQuestion(222)"> <!-- 5번 → body 태그를 읽은 후에 onload 수행 -->
+    <script>
+        insertQuestion(111); // 1번
+    </script>
+
+    <h1 id="question"></h1> <!-- 4번 → id 읽음-->
+
+</body>
+
+</html>
+
+<!-- 
+    1. body를 읽던 중 자바스크립트의 함수 호출 
+    → error 발생: document.getElementById("question").innerHTML = result;
+    → 아직 body의 <h1 id="question"></h1>를 읽지 않았기 때문
+    
+    2. body안의 모든 내용을 실행한 다음에 onload()가 처리된다.
+
+    3. <body onload="insertQuestion(222)">에서 호출이 되면 error 발생 X
+    → body의 <h1 id="question"></h1>를 읽었기 때문
+-->

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        document.write("*** eval 내장 함수 *** <br>");
+        var str = "100 + 1";
+        document.write(str + "<br>");
+        var result = eval("100 + 1");
+        document.write(result + "<br><br>");
+
+        document.write("*** Number, parseInt 내장함수 *** <br>");
+        var value1 = "100";
+        var num1 = Number(value1);
+        var num2 = parseInt(value1);
+
+        var r1 = value1 + 1;
+        var r2 = num1 + 1;
+        var r3 = num2 + 1;
+
+        document.write("r1=" + r1 + "<br>");
+        document.write("r2=" + r2 + "<br>");
+        document.write("r3=" + r3 + "<br>");
+
+        var value2 = "100.6";
+        var num3 = Number(value2);
+        var num4 = parseInt(value2);
+        var num5 = parseFloat(value2);
+
+        var r4 = num3 + 1;
+        var r5 = num4 + 1;
+        var r6 = num5 + 1;
+
+        document.write("r4=" + r4 + "<br>");
+        document.write("r5=" + r5 + "<br>");
+        document.write("r6=" + r6 + "<br>");
+    </script>
+</body>
+
+</html>
+
+<!-- 
+내장함수
+1. eval(문자열) : 문자열을 수식으로 변환
+2. Number(문자열) : 문자열을 숫자로 변환
+3. parseInt(문자열) : 문자열을 정수로 변환
+4. isNaN(문자열) : 문자열이 숫자형식이 아니면 true, 숫자형식이면 false -> Not-A-Number(숫자가 아님)
+5. alert(문자열) : 문자열을 대화상자로 출력
+6. confirm(문자열) : 문자열을 확인/취소 대화상자로 출력
+7. prompt(문자열) : 문자열이 제목으로 표시되는, 값을 입력받기 위한 대화상자 호출
+ -->

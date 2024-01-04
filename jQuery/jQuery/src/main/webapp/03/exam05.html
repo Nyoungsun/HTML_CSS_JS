@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul {
+            padding: 0;
+            margin: 0;
+            width: 670px;
+            list-style: none;
+        }
+
+        li {
+            float: left;
+        }
+
+        ul:after {
+            content: '';
+            display: block;
+            float: none;
+            clear: both;
+        }
+
+        img {
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>
+            <a href="#"><img src="jquery.jpg" alt="jquery"></a>
+        </li>
+        <li>
+            <a href="#"><img src="javascript.jpg" alt="javascript"></a>
+        </li>
+        <li>
+            <a href="#"><img src="css.jpg" alt="css"></a>
+        </li>
+        <li>
+            <a href="#"><img src="html.jpg" alt="html"></a>
+        </li>
+    </ul>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+        $(function () {
+            $('img[alt="jquery"]').hover(function () {
+                $(this).attr('src', 'jquery_on.jpg');
+            }, function () {
+                $(this).attr('src', 'jquery.jpg');
+            });
+            $('img[alt="javascript"]').hover(function () {
+                $(this).attr('src', 'javascript_on.jpg');
+            }, function () {
+                $(this).attr('src', 'javascript.jpg');
+            });
+            $('img[alt="css"]').hover(function () {
+                $(this).attr('src', 'css_on.jpg');
+            }, function () {
+                $(this).attr('src', 'css.jpg');
+            });
+            $('img[alt="html"]').hover(function () {
+                $(this).attr('src', 'html_on.jpg');
+            }, function () {
+                $(this).attr('src', 'html.jpg');
+            });
+        });
+    </script>
+</body>
+
+</html>

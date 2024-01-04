@@ -1,0 +1,283 @@
+@charset "UTF-8";
+
+@import url("reset.css");
+
+@font-face {
+	font-family: 'Pretendard-Regular';
+	src:
+		url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff')
+		format('woff');
+	font-weight: 400;
+	font-style: normal;
+}
+
+body {
+	font-family: Pretendard-Regular;
+}
+
+h1, h2, h3 {
+	font-family: Pretendard-Regular;
+}
+
+/* hidden */
+hr {
+	display: none;
+}
+
+.blind, legend {
+	display: block;
+	overflow: hidden;
+	position: absolute;
+	left: 0;
+	top: -1000em;
+}
+
+/* skip */
+.skip a {
+	display: block;
+	overflow: hidden;
+	position: absolute;
+	left: 0;
+	top: -1000em;
+	z-index: 9999;
+	width: 100%;
+	background-color: navy;
+	color: white;
+	font: bold 1.3em Pretendard-Regular;
+	text-decoration: none;
+	text-align: center;
+}
+
+.skip a:hover, .skip a:active, .skip a:focus {
+	top: 0;
+	padding: 0.5em 0;
+}
+
+#wrap {
+	width: 760px;
+	margin: 0 auto;
+}
+
+/* header start*/
+#header {
+	position: relative;
+	padding-bottom: 99px;
+	border-bottom: 1px solid #cccccc;
+	background: url("../img/bg_header.png") no-repeat 50% 100%;
+}
+
+.logo {
+	padding: 12px 0 12px 26px;
+}
+
+.logo a {
+	display: block;
+	overflow: hidden;
+	width: 90px;
+	height: 30px;
+	background: url("../img/logo.png") no-repeat;
+	text-indent: -9999em; /* 양수면 들여쓰기, 음수면 내어쓰기*/
+}
+
+.topnav {
+	position: absolute;
+	right: 35px;
+	top: 18px;
+}
+
+.topnav dd {
+	float: left;
+	padding-right: 11px;
+	margin-right: 10px;
+	background: url("../img/bg_topnav.png") no-repeat 100% 50%;
+}
+
+.topnav dd:last-child {
+	padding-right: 0;
+	margin-right: 0;
+	background: none;
+}
+
+.topnav dd a {
+	color: black;
+	font-size: 0.9em;
+}
+
+.mainnav {
+	padding-left: 50px;
+	background-color: #005B9B;
+}
+
+.mainnav:after {
+	content: '';
+	display: block;
+	clear: both;
+}
+
+.mainnav li {
+	float: left;
+}
+
+.mainnav li a {
+	display: block;
+	padding: 0 13px;
+	background-color: #005B9B;
+	color: #ffffff;
+	font: bold 16px/40px Pretendard-Regular; /* /: line height */
+	text-transform: uppercase;
+	text-decoration: none;
+}
+
+.mainnav li a:hover {
+	color: #000000;
+	background-color: #ffcc00;
+}
+
+/* header end*/
+
+/* container start*/
+#container {
+	background: url("../img/bg_snb.png") repeat-y 170px 0;
+}
+
+#container:after {
+	content: '';
+	display: block;
+	clear: both;
+}
+/* snb start */
+.snb {
+	float: left;
+	width: 170px;
+}
+
+.snb h2 {
+	padding: 28px 14px 8px 0;
+	margin-left: 11px;
+	margin-bottom: 15px;
+	border-bottom: 1px solid #cccccc;
+	color: #005B9B;
+	font-family: Pretendard-Regular;
+	font-size: 18px;
+	font-weight: bold;
+	text-align: right;
+}
+
+.snb ul {
+	margin-left: 11px;
+}
+
+.snb ul a {
+	display: block;
+	padding-right: 14px;
+	color: #005B9B;
+	font-family: Pretendard-Regular;
+	font-size: 14px;
+	font-weight: bold;
+	text-align: right;
+	text-decoration: none;
+	line-height: 30px; /* 줄 간격 */
+}
+
+.snb ul a:hover {
+	color: #660000;
+	text-decoration: underline;
+}
+/* snb end */
+
+/* content start */
+#content {
+	position: relative;
+	float: right;
+	width: 560px;
+}
+
+.locate {
+	position: absolute;
+	right: 28px;
+	top: 26px;
+	color: #ccc;
+	font-size: 0.9em;
+	word-spacing: 0.3em;
+}
+
+.locate a {
+	color: #666666;
+}
+
+.locate strong {
+	/* 	font-weight: normal; */
+	color: #666666;
+	word-spacing: 0em;
+}
+
+#content h2 {
+	padding: 24px 0;
+	color: #005B9B;
+	font-family: Pretendard-Regular;
+	font-size: 24px;
+	font-weight: bold;
+}
+
+#content .thum {
+	float: left;
+	margin-left: 14px;
+}
+
+#content .thum img {
+	width: 114px;
+	height: 111px;
+	border: 1px solid #cccccc;
+}
+
+#content .text {
+	margin-left: 148px;
+}
+
+#content .text p {
+	margin-bottom: 15px;
+	line-height: 1.4;
+}
+
+#footer {
+	border-top: 1px solid #cccccc;
+	padding: 18px 30px 40px 20px;
+	color: #666;
+	font-size: 0.9em;
+}
+
+#footer:after {
+	content: '';
+	display: block;
+	clear: both;
+}
+
+.btmnav {
+	float: right;
+}
+
+.btmnav dd {
+	float: left;
+}
+
+.btmnav dd:after {
+	content: '|';
+	padding: 0 0.7em;
+	color: #999;
+}
+
+.btmnav dd:last-child:after {
+	content: '';
+	padding: 0 0;
+}
+
+.copy {
+	float: left;
+	line-height: 1.8;
+}
+
+/* content end */
+/* container end*/
+
+/* footer start */
+/* footer end */

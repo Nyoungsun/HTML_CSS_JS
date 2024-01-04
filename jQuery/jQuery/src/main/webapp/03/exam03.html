@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>전체 선택 기능 구현하기</h1>
+    <form name="form1">
+        <fieldset>
+            <legend>취미</legend>
+            <p>
+                <input type="checkbox" id="all_check" value="Y">
+                <label for="all_check">전체 선택 / 해제</label>
+            </p>
+            <p>
+                <input type="checkbox" id="hobby1" class="hobby_check" value="축구">
+                <label for="hobby1">축구</label>
+                <input type="checkbox" id="hobby2" class="hobby_check" value="농구">
+                <label for="hobby2">농구</label>
+                <input type="checkbox" id="hobby3" class="hobby_check" value="야구">
+                <label for="hobby3">야구</label>
+            </p>
+        </fieldset>
+    </form>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+        $(function () {
+            $('#all_check').change(function () {
+                var is_check = $(this).is(':checked');
+                $('.hobby_check').prop('checked', is_check);
+            });
+        });
+    </script>
+</body>
+
+</html>
+<!--
+    .attr을 사용하면 전체 선택 / 해제은 제대로 기능하지만
+    일부를 해제한 후 다시 전체 선택으 누르면 전체가 선택되지 않음 → prop 사용
+-->

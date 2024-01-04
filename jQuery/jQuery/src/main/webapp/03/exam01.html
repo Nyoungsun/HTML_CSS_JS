@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p> <a href="#">Link</a></p>
+    <input type="checkbox" name="" id="check" checked="checked"> 체크박스
+    <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+        $(function () {
+            console.log('attr = ' + $('a').attr('href')); //#
+            console.log('prop = ' + $('a').prop('href')); //file:///D:/workspace/jQuery/src/main/webapp/03/exam01.html#
+
+            var check = $('#check');
+            console.log('check = ' + check);
+            console.log('check = ' + check.tagName); //undefined
+            console.log('check = ' + check.prop('tagName')); //INPUT
+            console.log('attr = ' + check.attr('checked')); //checked
+            console.log('prop = ' + check.prop('checked')); //true
+
+            var check2 = document.querySelector('#check');
+            console.log('attr = ' + check2.getAttribute('checked')); //checked
+
+/*
+.hasAttribute(name) —> 속성의 존재 확인
+.getAttribute(name) — 속성값을 가져온다
+.setAttribute(name, value) — 속성값을 변경
+.removeAttribute(name) — 속성값을 제거
+*/
+        });
+    </script>
+</body>
+
+</html>
+
+<!-- 
+attr() / prop()
+jQuery 1.6버전 이전에는 attr() 만으로 가능하던 처리를 1.6 업데이트로 attr()과 prop() 으로 나뉘어졌다.
+이전에는 attr() 하나로 많은 것을 처리하려다 보니 버그 및 문제가 발생하여 업데이트를 통해 불완전을 해소했다고 한다.
+
+1. attr()
+- HTML에 작성된 속성값을 문자열로 받아온다
+
+[형식]
+var 변수명 = $("요소").attr("속성이름");
+$("요소").attr("속성이름", "값");
+
+$("요소").attr({
+      "속성1이름": "값",
+      "속성2이름": "값",
+      "속성3이름": "값"
+});
+
+2. prop()
+- 지정한 선택자를 가진 첫번째 요소의 속성값을 가져오거나 속성값을 추가한다
+- 자바스크립트의 프로퍼티를 가져온다
+  주의할 점은 HTML 입장에서의 속성(attribute)이 아닌 JavaScript 입장에서의 속성(property)이라는 것이다
+- 자바스크립트의 프로퍼티 값이 넘어오기 때문에 boolean, date, function 등도 가져올 수 있다
+
+[형식]
+.prop("속성이름")        → 속성값을 가져온다
+.prop("속성이름", "값")   → 속성값을 추가한다
+ -->

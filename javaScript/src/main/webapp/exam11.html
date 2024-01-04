@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function f(x, y) {
+            var z = x + y;
+
+            if (z < 10) {
+                return;
+            }
+
+            return z;
+        }
+
+        let a = f(2, 1);
+        let b = f(5, 7);
+        let c = f(10, 5);
+
+        document.write("<h3>" + a + "</h3>"); //undefined
+        document.write("<h3>" + b + "</h3>"); //12
+        document.write("<h3>" + c + "</h3>"); //15
+
+    </script>
+</body>
+
+</html>

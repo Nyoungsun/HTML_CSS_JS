@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body onload="startTime()">
+    <h1 id="timer">현재시간을 보여줍니다.</h1>
+
+    <script>
+        function startTime() {
+            setInterval(printTime, 1000); //함수 이름만 선언 → 1초 마다 printTime 호출
+        }
+
+        function printTime() {
+            var days = ["일", "월", "화", "수", "목", "금", "토"];
+            var today = new Date();
+
+            var yy = today.getFullYear(); //년
+            var mm = today.getMonth(); //월
+            var dd = today.getDate(); //일
+            var i = today.getDay(); //요일(0~6)
+            var day = days[i];
+
+            var hh = today.getHours();
+            var mi = today.getMinutes();
+            var ss = today.getSeconds();
+
+            var result = yy + "-" + mm + "-" + dd + " " + day + "요일 " + hh + ":" + mi + ":" + ss;
+            document.getElementById("timer").innerHTML = result;
+        }
+    </script>
+</body>
+
+</html>

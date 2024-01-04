@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>활성/비활성 구현하기</h1>
+    <form name="form1">
+        <input type="checkbox" id="upload_file_check" value="Y">
+        <input type="file" id="file_finder" disabled>
+    </form>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+        $(function () {
+            $('#upload_file_check').change(function () {
+                var is_check = $(this).is(':checked');
+                $('#file_finder').prop('disabled', !is_check);
+            });
+        });
+
+    </script>
+</body>
+
+</html>

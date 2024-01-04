@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let score = prompt("점수 입력");
+
+        switch (Math.floor(score / 10)) {
+            case 10:
+            case 9: grade = "A"; break;
+            case 8: grade = "B"; break;
+            case 7: grade = "C"; break;
+            case 6: grade = "D"; break;
+            default: grade = "F"
+        }
+
+        document.write("당신의 점수는 " + score + "점 이므로 " + grade + "학점 입니다.");
+        
+        let num = 85.9876543;
+        console.log(num.toFixed(0)); //9 반올림 = 86
+        console.log(num.toFixed(3)); //6 반올림 = 85.988
+
+        var a = "1.7";
+        console.log(a + 3); //1.73
+        console.log(parseInt(a) + 3); //4 
+        console.log(Math.floor(a) + 3); //4
+        console.log(Number(a) + 3); //4.7
+        console.log(~~(a) + 3); //Math.floor(a)와 비슷 = 4
+
+        /*
+        Math.ceil() : 소수점 올림, 정수 반환
+        Math.floor() : 소수점 버림, 정수 반환
+        Math.round() : 소수점 반올림, 정수 반환
+        toFixed() : 숫자에서 원하는 소수점 길이만큼만 반올림하여서 반환
+        
+        parseInt() : 문자 -> 정수     "123" -> 123
+        parseFloat() : 문자 -> 실수     "45.3" -> 45.3
+        
+        Number() : 문자 -> 정수&실수
+        */
+
+    </script>
+
+</body>
+
+</html>

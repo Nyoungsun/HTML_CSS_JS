@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="event.css">
+</head>
+
+<body>
+    <h1>마우스 이벤트</h1>
+    <div id="input">
+        Do it in here
+    </div>
+    <h2>결과</h2>
+    <div id="result"></div>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+        $(function(){
+            $('#input').mousedown(function(){
+                $('#result').html('Mouse Down');
+            });
+
+            $('#input').mouseup(function(){
+                $('#result').html('Mouse Up');
+            });
+
+            $('#input').mouseenter(function(){
+                $('#result').html('Mouse Enter');
+
+            });
+            
+            $('#input').mouseleave(function(){
+                $('#result').html('Mouse Leave');
+
+            });
+        });
+    </script>
+
+</body>
+
+</html>

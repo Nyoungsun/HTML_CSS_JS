@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <!-- .dtd 필수 -->
+ 
+<mapper namespace="memberSQL">
+	<!-- 회원가입 -->
+	<insert id="memberWrite" parameterType="memberDTO">
+		insert into member values(
+		#{name}, #{id}, #{pwd}, #{gender}, #{email1}, #{email2},
+		#{tel1}, #{tel2}, #{tel3}, #{zipcode}, #{addr1}, #{addr2}, sysdate)
+	</insert>
+	
+	<!-- 로그인, 중복확인 -->
+	<select id="isExist" parameterType="String" resultType="memberDTO">
+		select * from member where id = #{id}
+	</select>
+	
+	<!-- 회원정보수정 -->
+	<update id="memberUpdate" parameterType="memberDTO">
+		update member set 
+		name = #{name}, id = #{id}, pwd = #{pwd}, gender = #{gender},
+		email1 = #{email1}, email2 = #{email2}, tel1 = #{tel1}, tel2 = #{tel2}, tel3 = #{tel3},
+		zipcode = #{zipcode}, addr1 = #{addr1}, addr2 = #{addr2}, 
+		logtime = sysdate
+		where id = #{id}
+	</update>
+	
+	<!-- 회원탈퇴 -->
+	<delete id="memberDelete" parameterType="String">
+		delete from member where id = #{id}
+	</delete>
+</mapper>

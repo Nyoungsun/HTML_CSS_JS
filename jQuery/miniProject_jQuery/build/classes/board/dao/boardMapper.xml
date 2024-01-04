@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="boardSQL">
+	<insert id="boardWrite" parameterType="java.util.Map">
+		insert into board(seq, 
+						  id,
+						  name, 
+						  email, 
+						  subject, 
+						  content, 
+						  ref)
+				  values(seq_board.nextval,
+				  	     #{name}, 
+					     #{id}, 
+					     #{email}, 
+					     #{subject}, 
+					     #{content}, 
+					     seq_board.currval)
+	</insert>
+	<!-- 
+	원글 
+	lev, step, pseq = 0
+	ref = seq
+	-->
+
+	<select id="boardList" parameterType="java.util.Map" resultType="boardDTO">
+		<![CDATA[
+		select * from
+		(select rownum rn, A.* from
+		(select * from board order by ref desc, step asc) A)
+		where rn >= #{start} and rn <= #{end}
+		]]>
+	</select>
+
+	<select id="boardView" parameterType="int" resultType="boardDTO">
+		select * from board where seq = #{seq}
+	</select>
+
+	<select id="totalArticle" resultType="int">
+		select count(*) from board
+	</select>
+	
+	<!-- 답글 -->
+	<!-- 
+	답글 
+	ref = 원글 ref (원글 ref = seq)
+	lev = 원글 lev + 1
+	step = 원글 step + 1 
+	pseq = 원글 seq 
+	-->
+	
+	<update id="boardReply" parameterType="boardDTO">
+		<![CDATA[
+		update board set step = step + 1 where ref = #{ref} and step > #{step}  
+		]]>
+	</update>
+	
+	<insert id="boardReply2" parameterType="java.util.Map">
+		insert into board values(seq_board.nextval, 
+								 #{id}, 
+								 #{name},
+								 #{email},
+								 #{subject},
+								 #{content}, 
+								 #{ref}, 
+								 #{lev}, 
+								 #{step},
+								 #{pseq},
+								 0,
+								 0,
+								 sysdate)
+	</insert>
+	
+	<update id="boardReply3" parameterType="int">
+		update board set reply = reply + 1 where seq = #{seq}  
+	</update>
+	
+</mapper>

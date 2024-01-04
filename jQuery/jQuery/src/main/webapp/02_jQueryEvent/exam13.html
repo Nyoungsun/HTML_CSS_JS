@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="event.css">
+</head>
+
+<body>
+    <h1>this의 사용</h1>
+    <div id="input">
+        <h2>단독 개체의 확인</h2>
+        <div id="singleButton">클릭하세요</div>
+
+        <h2>복수 개체의 확인</h2>
+        <div>
+            <button class="multiButton">클릭하세요</button>
+            <button class="multiButton">클릭하세요</button>
+            <button class="multiButton">클릭하세요</button>
+            <button class="multiButton">클릭하세요</button>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+        $(function () {
+            $('#singleButton').click(function () {
+                //$('#singleButton').html('감사합니다');
+                $(this).html('감사합니다');
+            });
+
+            $('.multiButton').click(function(){
+                //$('.multiButton').html('감사합니다'); → 전부 다 바뀜
+                $(this).html('감사합니다'); // 누른 것만 바뀜
+
+                var index = $(this).index();
+                var result = index + "번째 요소를 눌렀음";
+
+                $(this).html(result);
+            });
+        });
+    </script>
+</body>
+
+</html>
